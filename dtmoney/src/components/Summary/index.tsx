@@ -1,9 +1,17 @@
+import { useEffect } from 'react';
 import incomeImg from '../../assets/income.svg';
 import outcomeImg from '../../assets/outcome.svg';
 import total from '../../assets/total.svg';
+import { api } from '../../services/api';
 import { Container } from './styles';
 
 const Summary: React.FC = () => {
+
+    useEffect(() => {
+        api('transactions')
+        .then(response => console.log(response.data))
+    }, []);
+
   return (
   <Container >
       <div>
